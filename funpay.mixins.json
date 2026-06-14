@@ -1,0 +1,50 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "fear.dlc.invoke",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EntityInvoke",
+    "LivingEntityInvoke",
+    "mixins.EntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "CameraInvoke",
+    "ChatScreenInvoke",
+    "ClientConnectionInvoke",
+    "ClientPlayerEntityInvoke",
+    "DeathScreenInvoke",
+    "EntityRendererInvoke",
+    "GameRendererInvoke",
+    "InGameHudInvoke",
+    "KeyboardInvoke",
+    "MouseInvoke",
+    "mixins.AspectRatioMixin",
+    "mixins.ChatInputSuggestorMixin",
+    "mixins.ClientPlayerInteractionManagerMixin",
+    "mixins.EntityOutlineColorMixin",
+    "mixins.EntityRenderDispatcherOutlineMixin",
+    "mixins.fogColorMixin",
+    "mixins.FogDistanceMixin",
+    "mixins.FullBrightMixin",
+    "mixins.GameRendererAccessor",
+    "mixins.HeldItemRendererMixin",
+    "mixins.HeldItemRendererAccessor",
+    "mixins.InGameHudPotionsMixin",
+    "mixins.InGameOverlayRendererMixin",
+    "mixins.KeyboardInputMixin",
+    "mixins.MinecraftClientAccessor",
+    "mixins.PostEffectProcessorMixin",
+    "mixins.SaturationBarMixin",
+    "mixins.TextVisitFactoryMixin",
+    "mixins.TimeUpdateMixin",
+    "mixins.TitleScreenMixin",
+    "mixins.TransparentInvisiblePlayersMixin",
+    "mixins.WorldRendererAccessor",
+    "mixins.WorldRendererMixin"
+  ],
+  "refmap": "entityculling-fabric-refmap.json"
+}

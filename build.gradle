@@ -1,0 +1,63 @@
+plugins {
+    id 'fabric-loom' version '1.12.7'
+}
+
+group = 'fear.dlc'
+version = '1.0.1'
+
+base {
+    archivesName = 'fear-dlc-patch'
+}
+
+repositories {
+    maven { url = 'https://maven.fabricmc.net/' }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.minecraft_version}+build.8:v2"
+
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    modCompileOnly files('C:/Users/qwes1/Desktop/fearcrack.jar')
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ['patch-src/main/java']
+        resources.srcDirs = []
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+tasks.register('patchedJar', Jar) {
+    dependsOn tasks.remapJar
+    archiveFileName = 'fear-dlc-patched.jar'
+    destinationDirectory = layout.buildDirectory.dir('libs')
+
+    from(zipTree(file('C:/Users/qwes1/Desktop/fearcrack.jar'))) {
+        exclude 'fear/dlc/modules/impl/combat/Aura.class'
+        exclude 'fear/dlc/modules/impl/player/MiddleClick.class'
+        exclude 'fear/dlc/modules/impl/render/FullBright.class'
+        exclude 'fear/dlc/modules/more/ModuleRepository.class'
+        exclude 'fear/dlc/invoke/mixins/FullBrightMixin.class'
+    }
+    from({ zipTree(tasks.remapJar.archiveFile.get().asFile) }) {
+        include 'fear/dlc/modules/impl/combat/Aura.class'
+        include 'fear/dlc/modules/impl/player/MiddleClick.class'
+        include 'fear/dlc/modules/impl/render/FullBright.class'
+        include 'fear/dlc/modules/more/ModuleRepository.class'
+        include 'fear/dlc/invoke/mixins/FullBrightMixin.class'
+    }
+}

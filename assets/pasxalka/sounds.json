@@ -1,0 +1,14 @@
+{
+  "open_gui": {
+    "subtitle": "subtitles.fear.open_gui",
+    "sounds": [
+      "fear:open_gui"
+    ]
+  },
+  "chest_disabled": {
+    "subtitle": "subtitles.fear.chest_disabled",
+    "sounds": [
+      "fear:chest_disabled"
+    ]
+  }
+}

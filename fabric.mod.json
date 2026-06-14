@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "entityculling-fabric",
+  "version": "1.9.5",
+
+  "name": "entityculling-fabric",
+  "description": "optimization mod for minecraft",
+  "authors": [],
+  "contact": {},
+
+  "license": "All-Rights-Reserved",
+  "icon": "assets/pasxalka/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "fear.dlc.FearDCP"
+    ],
+    "client": [
+      "fear.dlc.TelegramOpener"
+    ]
+  },
+
+  "mixins": [
+    "funpay.mixins.json"
+  ],
+
+  "accessWidener": "funpay.accesswidener",
+
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "fabric": "*",
+    "minecraft": "1.21.4"
+  }
+}

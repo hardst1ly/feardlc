@@ -1,0 +1,26 @@
+{
+    "blend": {
+        "func": "add",
+        "srcrgb": "one",
+        "dstrgb": "zero"
+    },
+    "vertex": "pasxalka:post/blur",
+    "fragment": "pasxalka:post/entity_outline_box_blur",
+    "samplers": [
+        { "name": "InSampler" }
+    ],
+    "uniforms": [
+        { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] },
+        { "name": "InSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+        { "name": "OutSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+        { "name": "BlurDir", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+        { "name": "BlurWeight0", "type": "float", "count": 1, "values": [ 0.20 ] },
+        { "name": "BlurWeight1", "type": "float", "count": 1, "values": [ 0.18 ] },
+        { "name": "BlurWeight2", "type": "float", "count": 1, "values": [ 0.12 ] },
+        { "name": "BlurWeight3", "type": "float", "count": 1, "values": [ 0.05 ] },
+        { "name": "BlurRadius1", "type": "float", "count": 1, "values": [ 2.0 ] },
+        { "name": "BlurRadius2", "type": "float", "count": 1, "values": [ 4.0 ] },
+        { "name": "BlurRadius3", "type": "float", "count": 1, "values": [ 6.0 ] },
+        { "name": "Brightness", "type": "float", "count": 1, "values": [ 1.1 ] }
+    ]
+}
